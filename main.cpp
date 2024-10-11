@@ -54,4 +54,5 @@ int main(){
     tablero t;
     t.mostrar();
     
-    r
+    return=0
+}        
