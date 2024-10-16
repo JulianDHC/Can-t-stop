@@ -1,58 +1,38 @@
-include <iostream>
-#include <map>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-//map<char,int> posicion;
-
-
-//char tablero[13][11];
-
-
-class tablero{
+class Tablero {
     
     private:
-        int guia[11] = {3,5,7,9,11,13,11,9,7,5,3};
-        char** ptr;
+        vector<int> guia = {3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 3};  
+        vector<vector<char>> tablero; 
         
     public:
-        tablero(){
+    int x = 2;
+        Tablero() {
+            tablero.resize(11);
             
-            ptr = (char**)malloc(11*8);
-            for(int j=0; j<11 ;j++){
-                    ptr[j] = (char*)malloc(guia[j]);
+            for(int i = 0; i < 11; i++) {
+                tablero[i].resize(guia[i], 'O'); 
             }
-            
-            for(int i = 0; i<11 ;i++){
-                for(int j=0; j<guia[i] ;j++){
-                    ptr[i][j] = 'c';
-                }
-            }
-            
         }
-        void mostrar(){
-            
-            for(int i = 0; i<11 ;i++){
-                for(int j=0; j<guia[i]; j++){
-                    cout << ptr[i][j];
+        
+        void mostrar() {
+            for(int i = 0; i < 11; i++) {
+                for(int j = 0; j < guia[i]; j++) {
+                    cout << tablero[i][j] << " ";
                 }
-                cout << endl;
+                cout << x++ << endl;
             }
-            
         }
-    
 };
 
-
-
-
-
-int main(){
+int main() {
     
-    
-    
-    tablero t;
+    Tablero t;
     t.mostrar();
     
-    return=0
+    return 0;
 }        
