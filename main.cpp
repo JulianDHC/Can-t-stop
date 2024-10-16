@@ -1,4 +1,4 @@
-include <iostream>
+#include <iostream>
 #include <map>
 
 using namespace std;
@@ -54,5 +54,5 @@ int main(){
     tablero t;
     t.mostrar();
     
-    return=0
+    return 0;
 }        
