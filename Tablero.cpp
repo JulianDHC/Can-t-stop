@@ -1,24 +1,28 @@
 #include <iostream>
-#include <map>
 #include <string>
-#include "main.cpp"
+#include "juego.cpp"
 using namespace std;
 
 class celda
 {
     
    public:
-   
        char c_[4];
-       for(int i=0 ;i<4;i++ ) 
-          celda[i]='';
-       }
+       celda()
+       {
+         for(int i=0 ;i<4;i++ ) 
+          c_[i]=' ';
+       }  
+     
+
      void asignarJugadores(int numJugadores)// Asigna un '0' por cada jugador 
      { 
-        for (int i = 0; i < numJugadores; ++i) {
-            c_[i] = '0'; 
+        for (int i = 0; i < numJugadores; ++i) 
+        {
+          c_[i] = '0'; 
+        }   
      }
-}
+
 
      void mostrar()
      {    
@@ -37,9 +41,10 @@ class tablero{
         int guia[11] = {3,5,7,9,11,13,11,9,7,5,3};
         string rotulo[11] = {"2 : ","3 : ","4 : ","5 : ","6 : ","7 : ","8 : ","9 : ","10: ","11: ","12: "};
         celda** ptr;
+        int numJugadores;
         
     public:
-        tablero()
+        tablero(int numJugadores): numJugadores(numJugadores)
         {
             
             ptr = (celda**)malloc(11*8);
@@ -49,7 +54,8 @@ class tablero{
             
             for(int i = 0; i<11 ;i++){
                 for(int j=0; j<guia[i] ;j++){
-                    ptr[i][j] = celda('0','0','0','0');
+                    ptr[i][j].asignarJugadores(numJugadores);
+                  //  ptr[i][j] = celda('0','0','0','0');
                 }
             }
             
@@ -58,6 +64,7 @@ class tablero{
         haya son los numeros de jugadores)*/
         void mostrar() 
         {
+             //cout<< numJugadores<<endl;
             cout << "                                 TABLERO" << endl;
                
             for(int i = 0; i<11 ;i++)
