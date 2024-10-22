@@ -26,7 +26,7 @@ class celda
 
      void mostrar()
      {    
-          cout << c_[0] << c_[1] << c_[2] << c_[3] << "|";
+          cout << c_[0] << c_[1] << c_[2] << c_[3] << c_[4]<< "|";
      }
 
    
