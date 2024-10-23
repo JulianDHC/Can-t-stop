@@ -11,7 +11,7 @@ using namespace std;
         cout << "ingrese el numero de jugadores" << endl;
         cin >> Jugadores;
 
-        while (Jugadores < 3 || Jugadores > 5)
+        while (Jugadores < 2 || Jugadores > 4)
         {
             cout << "Número inválido. Ingrese un número entre 3 y 5: " << endl;
             cin >> Jugadores;
