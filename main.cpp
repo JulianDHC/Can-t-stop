@@ -2,8 +2,7 @@
 #include "juego.h"
 using namespace std;
 
-<<<<<<< HEAD
-=======
+
     int Jugadores;
     int PedirJugadores()
     {
@@ -17,7 +16,6 @@ using namespace std;
         } 
         return Jugadores;
     } 
->>>>>>> d4b34206c3ed73674e52b032f6a708ff017fd853
 
 
 int main()
