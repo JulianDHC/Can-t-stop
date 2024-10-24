@@ -56,19 +56,37 @@ public:
         }
     }
 
-    void colocarFicha(int suma, int jugador) 
+   void colocar_ficha(int suma, int jugador) 
+{
+    int fila = suma - 2;
+    int contador_fichas = 0;
+
+    // Contar cuántas fichas ya tiene el jugador en esta fila
+    for (int i = 0; i < guia[fila]; i++) 
     {
-        int fila = suma - 2;
-        
+        if (ptr[fila][i].c_[jugador] == ' ') 
+        {
+            contador_fichas++;
+        }
+    }
+
+    // Solo permitir colocar si el jugador tiene menos de 3 fichas en la fila
+    if (contador_fichas < 3) 
+    {
         for (int i = 0; i < guia[fila]; i++) 
         {
             if (ptr[fila][i].c_[jugador] == '.') 
             {  
-                ptr[fila][i].c_[jugador] = ' ';
+                ptr[fila][i].c_[jugador] = ' ';  // Colocar ficha
                 break;
             }
         }
+    } 
+    else 
+    {
+        cout << "El jugador ya tiene 3 fichas en esta fila." << endl;
     }
+}
 
     void mostrar() {
         cout << "                                 TABLERO" << endl;
