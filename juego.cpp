@@ -15,12 +15,12 @@ class avances
 };
 int juego::PedirJugadores() 
 {
-    cout << "Ingrese el número de jugadores (entre 3 y 5): " << endl;
+    cout << "Ingrese el número de jugadores (entre 2 y 4): " << endl;
     cin >> numJugadores;
 
-    // Validar que el número de jugadores esté entre 3 y 5
-    while (numJugadores < 3 || numJugadores > 5) {
-        cout << "Número inválido. Ingrese un número entre 3 y 5: " << endl;
+    // Validar que el número de jugadores esté entre 2 y 4
+    while (numJugadores < 2 || numJugadores > 4) {
+        cout << "Número inválido. Ingrese un número entre 2 y 4: " << endl;
         cin >> numJugadores;
     }
     return numJugadores;
